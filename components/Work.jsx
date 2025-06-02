@@ -51,7 +51,7 @@ const Work = () => {
               key={index}
               className="w-full h-[492px] flex-1 relative overflow-hidden group flex justify-center" 
             >
-              <Image src={item.img} fill className="object-cover" alt=""/>
+              <Image src={item.img} fill className="object-cover" quality={100} alt=""/>
               <div className="w-[90%] h-[84px] bg-primary absolute bottom-4 flex justify-between items-center text-white md:translate-y-[108px] 
                 md:group-hover:translate-y-0 transition-all duration-500">
                 <div className="pl-8">
