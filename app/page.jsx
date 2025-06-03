@@ -32,7 +32,7 @@ const Home = () => {
   console.log(headerActive);
 
   return (
-    <>
+    <div className='overflow-hidden'>
       <Topbar/>
       <div className='relative z-10'>
         <Header/>
@@ -49,7 +49,7 @@ const Home = () => {
       <Faq/>
       <Contact/>
       <Footer/>
-    </>
+    </div>
   )
 }
 

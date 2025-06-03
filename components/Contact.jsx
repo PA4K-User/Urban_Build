@@ -2,10 +2,19 @@ import { RiChat1Line, RiMapPin2Line, RiSmartphoneLine } from "react-icons/ri"
 import Form from "./Form"
 import Socials from "./Socials"
 
+import { motion } from "framer-motion"
+import { fadeIn } from "@/variants"
+
 const Contact = () => {
   return (
     <section id="contact" className="pt-16 xl:pt-32">
-      <div className="container mx-auto">
+      <motion.div 
+        variants={fadeIn("up", 0.1)}
+        initial="hidden"
+        whileInView="show"
+        viewport={{once: false, amount: 0.2}}
+        className="container mx-auto"
+      >
         <div className="w-full xl:h-[730px] shadow-custom p-4 xl:p-8 xl:px-[90px] xl:py-[36px]
         border-t-4 border-accent">
           <div className="flex flex-col xl:flex-row h-full gap-[40px] xl:gap-[90px]">
@@ -67,7 +76,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }

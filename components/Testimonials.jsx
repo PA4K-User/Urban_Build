@@ -3,12 +3,21 @@ import Button from "./Button"
 import Pretitle from "./Pretitle"
 import Slider from "./Slider"
 
+import {motion} from "framer-motion"
+import { fadeIn } from "@/variants"
+
 const Testimonials = () => {
   return (
     <section className="pt-16 xl:pt-32">
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row relative">
-          <div className="flex-1 max-w-[484px] xl:pt-[54px] mb-12 xl:mb-0">
+          <motion.div 
+            variants={fadeIn("right", 0.2)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{once: false, amount: 0.2}}
+            className="flex-1 max-w-[484px] xl:pt-[54px] mb-12 xl:mb-0"
+          >
             <Pretitle text="Testimonials"/>
             <h2 className="h2 mb-6">Built On Trust, Proven By Results</h2>
             <p className="mb-10 max-w-[420px]">
@@ -17,8 +26,14 @@ const Testimonials = () => {
               their dreams to live with expert craftmanship.
             </p>
             <Button text="Work with us"/>
-          </div>
-          <div className="flex-1 flex flex-row xl:flex-row xl:justify-end mt-8">
+          </motion.div>
+          <motion.div 
+            variants={fadeIn("up", 0.2)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{once: false, amount: 0.2}}
+            className="flex-1 flex flex-row xl:flex-row xl:justify-end mt-8"
+          >
             <div className="relative hidden xl:flex xl:w-[570px] xl:h-[580px]">
               <Image
                 src="/assets/img/testimonials/img.jpg"
@@ -28,7 +43,13 @@ const Testimonials = () => {
                 alt="" 
               />
             </div>
-            <div className="hidden xl:flex xl:absolute xl:bottom-0 xl:right-[160px] relative max-w-max">
+            <motion.div 
+            variants={fadeIn("left", 0.1)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{once: false, amount: 0.2}}
+              className="hidden xl:flex xl:absolute xl:bottom-0 xl:right-[160px] relative max-w-max"
+            >
               <Image
                 src="/assets/img/testimonials/quote.svg"
                 width={54}
@@ -37,8 +58,8 @@ const Testimonials = () => {
                 alt=""
               />
               <Slider/>
-            </div>
-          </div>          
+            </motion.div>
+          </motion.div>          
         </div>
       </div>
     </section>

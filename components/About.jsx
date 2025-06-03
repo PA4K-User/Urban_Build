@@ -2,13 +2,22 @@ import Image from "next/image"
 import Pretitle from "./Pretitle"
 import Button from "./Button"
 
+import {motion} from "framer-motion"
+import { fadeIn } from "@/variants"
+
 const About = () => {
   return (
     <div className="pt-16 xl:pt-32" id="about">
       <div className="container mx-auto">
         <div className="flex flex-col gap-12 xl:gap-0 xl:flex-row xl:items-center">
           <div className="flex-1">
-            <div className="max-w-[540px]">
+            <motion.div 
+              variants={fadeIn("right", 0.2)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{once: false, amount: 0.8}}
+              className="max-w-[540px]"
+            >
               <Pretitle text="About us"/>
               <h2>
                 Focused On Excellence In Every Project
@@ -28,9 +37,15 @@ const About = () => {
                  <p>Company CEO</p>
               </div>
               <Button text="Contact us"/>
-            </div>
+            </motion.div>
           </div>
-          <div className="flex-1 xl:flex xl:justify-center">
+          <motion.div 
+            variants={fadeIn("left", 0.2)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{once: false, amount: 0.8}}
+            className="flex-1 xl:flex xl:justify-center"
+          >
             <div className="xl:w-[444px] xl:h-[493px] relative">
               <div className="hidden xl:flex w-[444px] h-[493px] bg-accent absolute
               -top-4 -left-4 -z-10"></div>
@@ -41,7 +56,7 @@ const About = () => {
                 alt="" 
               />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
