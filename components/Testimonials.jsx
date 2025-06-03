@@ -28,7 +28,7 @@ const Testimonials = () => {
                 alt="" 
               />
             </div>
-            <div className=" xl:absolute xl:bottom-0 xl:right-[160px] relative max-w-max">
+            <div className="hidden xl:flex xl:absolute xl:bottom-0 xl:right-[160px] relative max-w-max">
               <Image
                 src="/assets/img/testimonials/quote.svg"
                 width={54}
